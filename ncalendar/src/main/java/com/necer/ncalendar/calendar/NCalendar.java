@@ -13,12 +13,15 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+
 import com.necer.ncalendar.listener.OnCalendarChangedListener;
 import com.necer.ncalendar.listener.OnMonthCalendarChangedListener;
 import com.necer.ncalendar.listener.OnWeekCalendarChangedListener;
 import com.necer.ncalendar.utils.Attrs;
 import com.necer.ncalendar.view.NMonthView;
+
 import org.joda.time.DateTime;
+
 import java.util.List;
 
 /**
@@ -50,7 +53,6 @@ public class NCalendar extends FrameLayout implements NestedScrollingParent, Val
     private Rect weekRect;//周日历大小的矩形 ，用于判断点击事件是否在日历的范围内
 
     private OnCalendarChangedListener onCalendarChangedListener;
-
 
 
     public NCalendar(Context context) {
@@ -499,7 +501,7 @@ public class NCalendar extends FrameLayout implements NestedScrollingParent, Val
     /**
      * 跳转制定日期
      *
-     * @param formatDate  yyyy-MM-dd
+     * @param formatDate yyyy-MM-dd
      */
     public void setDate(String formatDate) {
         DateTime dateTime = new DateTime(formatDate);
@@ -532,6 +534,19 @@ public class NCalendar extends FrameLayout implements NestedScrollingParent, Val
         }
     }
 
+
+    public void SwitchWeekOrMonth() {
+        if (STATE == MONTH) {
+            int monthCalendarOffset = getMonthCalendarOffset();
+            autoScroll(0, -monthCalendarOffset, monthHeigh, weekHeigh);
+        } else if (STATE == WEEK) {
+            monthCalendarTop = monthCalendar.getTop();
+            childViewTop = childView.getTop();
+            weekCalendar.setVisibility(INVISIBLE);
+            autoScroll(monthCalendarTop, 0, childViewTop, monthHeigh);
+        }
+    }
+
     /**
      * 回到今天
      */
@@ -545,6 +560,7 @@ public class NCalendar extends FrameLayout implements NestedScrollingParent, Val
 
     /**
      * 设置指示圆点
+     *
      * @param pointList
      */
     public void setPoint(List<String> pointList) {

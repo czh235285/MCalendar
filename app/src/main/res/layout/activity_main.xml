@@ -3,27 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <com.necer.ncalendar.calendar.MWCalendar
+        <com.necer.ncalendar.calendar.NCalendar
             android:id="@+id/mCalendar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:calendarHeight="300dp"
-            app:duration="500"
-            app:hollowCircleColor="#1d3154"
-            app:isMultiple="false"
-            app:isShowLunar="false"
-            app:selectCircleColor="#B8ECF0"
-            app:solarTextColor="#333">
+            app:defaultCalendar="Week"
+            app:firstDayOfWeek="Sunday">
 
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/sign_rcv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-        </com.necer.ncalendar.calendar.MWCalendar>
-    </RelativeLayout>
+        </com.necer.ncalendar.calendar.NCalendar>
+    </LinearLayout>
 </RelativeLayout>

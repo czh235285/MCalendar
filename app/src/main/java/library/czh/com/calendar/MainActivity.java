@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.RelativeLayout;
 
-import com.necer.ncalendar.calendar.MWCalendar;
+import com.necer.ncalendar.calendar.NCalendar;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     protected RecyclerView signRcv;
-    protected MWCalendar mCalendar;
+    protected NCalendar mCalendar;
     protected RelativeLayout activityMain;
 
     @Override
@@ -26,10 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         signRcv = (RecyclerView) findViewById(R.id.sign_rcv);
-        mCalendar = (MWCalendar) findViewById(R.id.mCalendar);
+        mCalendar = (NCalendar) findViewById(R.id.mCalendar);
+        mCalendar.SwitchWeekOrMonth();
         signRcv.setLayoutManager(new LinearLayoutManager(this));
-        List<String> stringList= Arrays.asList(new String[]{"1","2","3"});
-        StringAdapter adapter=new StringAdapter(this,stringList,R.layout.stringitem);
+        List<String> stringList = Arrays.asList(new String[]{"1", "2", "3"});
+        StringAdapter adapter = new StringAdapter(this, stringList, R.layout.stringitem);
         signRcv.setAdapter(adapter);
     }
 }
