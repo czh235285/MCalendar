@@ -8,6 +8,7 @@ import android.widget.RelativeLayout;
 
 import com.necer.ncalendar.calendar.NCalendar;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,10 +28,18 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         signRcv = (RecyclerView) findViewById(R.id.sign_rcv);
         mCalendar = (NCalendar) findViewById(R.id.mCalendar);
-        mCalendar.SwitchWeekOrMonth();
         signRcv.setLayoutManager(new LinearLayoutManager(this));
         List<String> stringList = Arrays.asList(new String[]{"1", "2", "3"});
         StringAdapter adapter = new StringAdapter(this, stringList, R.layout.stringitem);
         signRcv.setAdapter(adapter);
+        List<String> list = new ArrayList<>();
+        list.add("2017-09-21");
+        list.add("2017-10-21");
+        list.add("2017-10-1");
+        list.add("2017-10-15");
+        list.add("2017-10-18");
+        list.add("2017-10-26");
+        list.add("2017-11-21");
+        mCalendar.setPoint(list);
     }
 }

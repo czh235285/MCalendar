@@ -73,7 +73,7 @@ public class NWeekView extends NCalendarView {
                 mSorlarPaint.setColor(mSolarTextColor);
                 canvas.drawText(dateTime.getDayOfMonth() + "", rect.centerX(), baseline, mSorlarPaint);
                 //绘制农历
-                drawLunar(canvas, rect, baseline,i);
+                drawLunar(canvas, rect, baseline, i);
                 //绘制节假日
                 drawHolidays(canvas, rect, dateTime, baseline);
                 //绘制圆点
@@ -108,7 +108,7 @@ public class NWeekView extends NCalendarView {
     public void drawPoint(Canvas canvas, Rect rect, DateTime dateTime, int baseline) {
         if (pointList != null && pointList.contains(dateTime.toLocalDate().toString())) {
             mLunarPaint.setColor(mPointColor);
-            canvas.drawCircle(rect.centerX(), baseline - rect.width() / 3, mPointSize, mLunarPaint);
+            canvas.drawCircle(rect.centerX(), baseline - rect.width() / 3 + 70, mPointSize, mLunarPaint);
         }
     }
 
