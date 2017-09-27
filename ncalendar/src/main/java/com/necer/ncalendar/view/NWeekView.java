@@ -108,7 +108,7 @@ public class NWeekView extends NCalendarView {
     public void drawPoint(Canvas canvas, Rect rect, DateTime dateTime, int baseline) {
         if (pointList != null && pointList.contains(dateTime.toLocalDate().toString())) {
             mLunarPaint.setColor(mPointColor);
-            canvas.drawCircle(rect.centerX(), baseline - rect.width() / 3 + 70, mPointSize, mLunarPaint);
+            canvas.drawCircle(rect.centerX(), baseline - rect.width() / 3 + 50, mPointSize, mLunarPaint);
         }
     }
 
