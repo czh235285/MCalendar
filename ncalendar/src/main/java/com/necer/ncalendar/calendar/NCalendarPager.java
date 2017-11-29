@@ -113,7 +113,7 @@ public abstract class NCalendarPager extends ViewPager {
                 getViewTreeObserver().removeGlobalOnLayoutListener(this);
             }
         });
-        setBackgroundColor(0xff1DC7D0);
+        setBackgroundColor(0xff20A0FF);
 //        setBackgroundColor(Color.WHITE);
     }
 
