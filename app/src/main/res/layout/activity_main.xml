@@ -7,14 +7,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
         <com.necer.ncalendar.calendar.NCalendar
-            app:isShowLunar="false"
             android:id="@+id/mCalendar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:calendarHeight="280dp"
             app:defaultCalendar="Week"
-            app:firstDayOfWeek="Sunday">
+            app:duration="500"
+            app:backgroundColor="@color/colorAccent"
+            app:hollowCircleColor="@color/colorAccent"
+            app:isMultiple="false"
+            app:isShowHoliday="false"
+            app:isShowLunar="false"
+            app:pointColor="#B8ECF0"
+            app:pointSize="3dp"
+            app:selectCircleColor="#B8ECF0"
+            app:selectCircleRadius="40"
+            app:solarTextColor="@color/workdayColor"
+            app:solarTextSize="14sp">
 
 
             <android.support.v7.widget.RecyclerView

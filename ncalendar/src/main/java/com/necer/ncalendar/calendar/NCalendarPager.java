@@ -67,6 +67,7 @@ public abstract class NCalendarPager extends ViewPager {
         Attrs.isShowHoliday = ta.getBoolean(R.styleable.NCalendar_isShowHoliday, true);
         Attrs.holidayColor = ta.getColor(R.styleable.NCalendar_holidayColor, getResources().getColor(R.color.holidayColor));
         Attrs.workdayColor = ta.getColor(R.styleable.NCalendar_workdayColor, getResources().getColor(R.color.workdayColor));
+        Attrs.backgroundColor = ta.getColor(R.styleable.NCalendar_backgroundColor, Color.WHITE);
 
 
         String firstDayOfWeek = ta.getString(R.styleable.NCalendar_firstDayOfWeek);
@@ -113,7 +114,7 @@ public abstract class NCalendarPager extends ViewPager {
                 getViewTreeObserver().removeGlobalOnLayoutListener(this);
             }
         });
-        setBackgroundColor(0xff20A0FF);
+        setBackgroundColor(Attrs.backgroundColor);
 //        setBackgroundColor(Color.WHITE);
     }
 
