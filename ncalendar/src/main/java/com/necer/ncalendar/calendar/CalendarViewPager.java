@@ -58,6 +58,7 @@ public abstract class CalendarViewPager extends ViewPager {
         Attrs.pointSize = ta.getDimension(R.styleable.NCalendar_pointSize, (int) Utils.dp2px(context, 2));
         Attrs.pointColor = ta.getColor(R.styleable.NCalendar_pointColor, getResources().getColor(R.color.selectCircleColor));
         Attrs.hollowCircleColor = ta.getColor(R.styleable.NCalendar_hollowCircleColor, Color.WHITE);
+        Attrs.backgroundColor = ta.getColor(R.styleable.NCalendar_backgroundColor, Color.WHITE);
         Attrs.hollowCircleStroke = ta.getInt(R.styleable.NCalendar_hollowCircleStroke, (int) Utils.dp2px(context, 1));
 
         isMultiple = ta.getBoolean(R.styleable.NCalendar_isMultiple, true);
@@ -100,7 +101,7 @@ public abstract class CalendarViewPager extends ViewPager {
             }
         });
 
-        setBackgroundColor(0xff20A0FF);
+        setBackgroundColor(Attrs.backgroundColor);
 //        setBackgroundColor(getResources().getColor(android.R.color.white));
     }
 
